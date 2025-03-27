@@ -1,7 +1,8 @@
-import 'mongodb';
-import { Schema as _Schema, model as _model } from 'mongoose';
+/* jshint esversion: 8 */
+const { Int32 } = require('mongodb');
+const mongoose = require('mongoose');
 
-const Schema = _Schema;
+const Schema = mongoose.Schema;
 
 const cars = new Schema({
 dealer_id: {

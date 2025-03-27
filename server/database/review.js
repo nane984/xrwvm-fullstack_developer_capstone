@@ -1,6 +1,7 @@
-import { Schema as _Schema, model } from 'mongoose';
+/* jshint esversion: 8 */
+const mongoose = require('mongoose');
 
-const Schema = _Schema;
+const Schema = mongoose.Schema;
 
 const reviews = new Schema({
 	id: {
