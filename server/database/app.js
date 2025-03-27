@@ -1,9 +1,9 @@
 /* jshint esversion: 8 */
-import express, { raw } from 'express';
-import { connect } from 'mongoose';
-import { readFileSync } from 'fs';
-import cors from 'cors';
-const app = express();
+const express = require('express');
+const mongoose = require('mongoose');
+const fs = require('fs');
+const  cors = require('cors')
+const app = express()
 const port = 3030;
 
 app.use(cors());
