@@ -1,11 +1,11 @@
-var express = require('express');
-var mongoose = require('mongoose');
-var fs = require('fs');
-var  cors = require('cors')
-var app = express()
-var port = 3030;
+const express = require('express');
+const mongoose = require('mongoose');
+const fs = require('fs');
+const  cors = require('cors')
+const app = express()
+const port = 3030;
 
-app.use(cors());
+app.use(cors())
 app.use(require('body-parser').urlencoded({ extended: false }));
 
 const reviews_data = JSON.parse(fs.readFileSync("reviews.json", 'utf8'));
