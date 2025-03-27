@@ -21,10 +21,10 @@ const Dealerships = require('./dealership');
 
 try {
   Reviews.deleteMany({}).then(()=>{
-    Reviews.insertMany(reviews_data['reviews']);
+    Reviews.insertMany(reviews_data.reviews);
   });
   Dealerships.deleteMany({}).then(()=>{
-    Dealerships.insertMany(dealerships_data['dealerships']);
+    Dealerships.insertMany(dealerships_data.dealerships);
   });
   
 } catch (error) {
@@ -34,7 +34,7 @@ try {
 
 // Express route to home
 app.get('/', async (req, res) => {
-    res.send("Welcome to the Mongoose API")
+    res.send("Welcome to the Mongoose API");
 });
 
 // Express route to fetch all reviews
