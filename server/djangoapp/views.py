@@ -13,9 +13,10 @@ from django.contrib.auth import login, authenticate
 import logging
 import json
 from django.views.decorators.csrf import csrf_exempt
-from server.djangoapp.populate import initiate
-from server.djangoapp.models import CarMake, CarModel
-from server.djangoapp.restapis import get_request, analyze_review_sentiments  # , post_review
+from .populate import initiate
+from .models import CarMake, CarModel
+from .restapis import get_request, analyze_review_sentiments 
+# , post_review
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -148,7 +149,7 @@ def add_review(request):
         except Exception as e:
             # If any error occurs
             print(f"Unexpected {e=}, {type(e)=}")
-            return JsonResponse({"status": 401,
+            return JsonResponse({"status": 401, 
                                  "message": "Error in posting review"})
     else:
         return JsonResponse({"status": 403, "message": "Unauthorized"})
