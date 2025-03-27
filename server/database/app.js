@@ -1,3 +1,4 @@
+/* jshint esversion: 8 */
 import express, { raw } from 'express';
 import { connect } from 'mongoose';
 import { readFileSync } from 'fs';
@@ -30,20 +31,11 @@ try {
   res.status(500).json({ error: 'Error fetching documents' });
 }
 
-// Define an async function separately
-const welcomeHandler = async (req, res) => {
-  try {
-      // Simulate an async task (optional)
-      const message = await Promise.resolve("Welcome to the Mongoose API");
-      
-      res.send(message);
-  } catch (error) {
-      res.status(500).send("Internal Server Error");
-  }
-};
 
 // Express route to home
-app.get('/', welcomeHandler);
+app.get('/', async (req, res) => {
+    res.send("Welcome to the Mongoose API")
+});
 
 // Express route to fetch all reviews
 app.get('/fetchReviews', async (req, res) => {
