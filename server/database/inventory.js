@@ -31,4 +31,4 @@ mileage: {
   }
 });
 
-export default _model('cars', cars);
+module.exports = mongoose.model('cars', cars);

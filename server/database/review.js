@@ -42,4 +42,4 @@ const reviews = new Schema({
   },
 });
 
-export default model('reviews', reviews);
+module.exports = mongoose.model('reviews', reviews);
