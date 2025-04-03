@@ -14,6 +14,7 @@ searchcars_url = os.getenv(
     'searchcars_url',
     default="http://localhost:3050/")
 
+
 def get_request(endpoint, **kwargs):
     params = ""
     if (kwargs):
@@ -70,7 +71,8 @@ def searchcars_request(endpoint, **kwargs):
         # Call get method of requests library with URL and parameters
         response = requests.get(request_url)
         return response.json()
-    except:
+    except Exception as e:
+        print(f"Unexpected {e=}, {type(e)=}")
         # If any error occurs
         print("Network exception occurred")
     finally:
